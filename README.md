@@ -20,7 +20,9 @@ FOR (x:Movie)
 REQUIRE x.movieId IS UNIQUE;
 ```
 
-### Step-2: Create Movie Nodes using the movies.csv file in this repository
+### Step-2: Create Movie Nodes
+
+We will start by creating the Movie Nodes using the movies.csv file in this repository
 
 ```
 LOAD CSV WITH HEADERS
@@ -35,7 +37,9 @@ m.audience_score = row.audience_score,
 m.movieTitle= row.movieTitle
 ```
 
-### Step-3: Create Critics Nodes using the file critic_reviews.csv
+### Step-3: Create Critics Nodes
+
+We will then create the Critics Nodes using the file critic_reviews.csv
 
 ```
 LOAD CSV WITH HEADERS
@@ -43,7 +47,9 @@ FROM 'https://raw.githubusercontent.com/looeejee/rotten_tomatoes_movies/main/cri
 MERGE (c:Critic {name: row.criticName}) RETURN c
 ```
 
-### Step-4: Create Relationship (c:Critic)-[r:HAS_REVIEWED]->(m:Movie) using the file critics_review.csv
+### Step-4: Create Relationship
+
+As a final step we weill create the Relationship (c:Critic)-[r:HAS_REVIEWED]->(m:Movie) using the file critic_review.csv
 
 ```
 LOAD CSV WITH HEADERS

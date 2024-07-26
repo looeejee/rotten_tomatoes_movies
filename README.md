@@ -67,5 +67,5 @@ RETURN c,m,r LIMIT 100
 ![3]
 
 [1]: /img/graph_1.png
-[2]: /img/graph_1.png
+[2]: /img/graph_2.png
 [3]: /img/table_1.png
